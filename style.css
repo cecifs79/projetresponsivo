@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(15, 14, 14);
+}
+.card{
+    background-color: aliceblue;
+    color: rgb(16, 16, 16);
+    width: 100px;
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px
+}
+
+/* 1280px ou mais → 6 colunas */
+@media (min-width: 1280px) {
+    .card {
+        width: calc(16.666% - 10px);
+    }
+}
+
+/* 768px a 1279px → 3 colunas */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .card {
+        width: calc(33.333% - 10px);
+    }
+}
+
+/* 480px a 767px → 2 colunas */
+@media (min-width: 480px) and (max-width: 767px) {
+    .card {
+        width: calc(50% - 10px);
+    }
+}
+
+/* abaixo de 480px → 1 coluna */
+@media (max-width: 479px) {
+    .card {
+        width: 100%;
+    }
+}
