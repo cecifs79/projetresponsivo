@@ -13,6 +13,11 @@ body{
     gap:10px
 }
 
+.card.grecia{
+    background-color: red;
+    color: white;
+}
+
 /* 1280px ou mais → 6 colunas */
 @media (min-width: 1280px) {
     .card {
