@@ -28,15 +28,23 @@
     let index = 0;
 
     function atualizarCards() {
-        cards.forEach((card, idx) => {
-            const estado = estados[(index + idx) % estados.length];
-            card.textContent = estado.toUpperCase();
-        });
-        index = (index + cards.length) % estados.length;
+        // adiciona classe de fade para animar saída
+        cards.forEach(card => card.classList.add('fade'));
+
+        // após a transição, atualiza o texto e remove a classe
+        setTimeout(() => {
+            cards.forEach((card, idx) => {
+                const estado = estados[(index + idx) % estados.length];
+                card.textContent = estado.toUpperCase();
+                card.classList.remove('fade');
+            });
+            index = (index + cards.length) % estados.length;
+        }, 300);
     }
 
+    // atualiza imediatamente sem esperar pela primeira transição
     atualizarCards();
-    setInterval(atualizarCards, 60000);
+    setInterval(atualizarCards, 5000);
 </script>
 </body>
 </html>
